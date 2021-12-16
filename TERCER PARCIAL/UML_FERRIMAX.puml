@@ -1,0 +1,89 @@
+@startuml
+class entity.Usuario #green{
+-NombreDeUsusrio:String
+-Contraseña:String
+-ConfirmarContraseña: String
++String getNombreDeUsusrio()
++String getContraseña()
+}
+class entity.Venta #green{
+-NumerodeVenta:int
++Int getPagar()
++Int setCambio()
+
+
+
+}
+class entity.Producto #green{
+-NumeroProducto:int
+-Precio:int
+-NombreProducto:String
+-Marca:String
++String getNombreProductos()
++String setProductos()
+
+
+}
+
+interface model.IUsuarioModel #red {
++void buscaPro(DefaultTableModel dtm)
++void consultar(DefaultTableModel x)
++Void ConfirmarContraseña()
++Void Usuario()
+}
+interface model.IVentaModel #red{
++void consultar(DefaultTableModel x)
++void eliminar(DefaultTableModel dtm)
++void actualizar()
+}
+interface model.IProductoModel #red{
++void consultar(DefaultTableModel x)
++void eliminar(DefaultTableModel dtm)
++void actualizar()
++void CambiarDatos()
++void buscaPro(DefaultTableModel dtm)
+}
+
+interface model.UsuarioModelImpl #red {
++void buscaPro(DefaultTableModel dtm)
++void consultar(DefaultTableModel x)
++Void ConfirmarContraseña()
++Void Usuario()
+}
+interface model.VentaModelImpl #red{
++void consultar(DefaultTableModel x)
++void eliminar(DefaultTableModel dtm)
++void actualizar()
+}
+interface model.ProductoModelImpl #red{
++void consultar(DefaultTableModel x)
++void eliminar(DefaultTableModel dtm)
++void actualizar()
++void CambiarDatos()
++void buscaPro(DefaultTableModel dtm)
+}
+class controlador.usuarioControlador #pink{
++UsuarioController
++VentaController
++ProductoController
+}
+
+class vista.Panel.Venta {
++Administrador()
++Agregar()
++ConsultarProducto()
++Alta()
++ConsultarUsuario()
++ConsultarVenta()
++Empleado()
++Producto()
++Login()
++Actualizar()
+}
+
+
+
+
+
+
+@enduml
