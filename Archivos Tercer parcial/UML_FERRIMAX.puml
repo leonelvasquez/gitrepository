@@ -1,0 +1,173 @@
+
+@startuml
+class entity.Usuario #green{
+-NombreUsuario:String
+-Contraseña:String
++String getNombreUsuario()
++String setNombreUsuario()
++String getContraseña()
++String setContraseña()
++void Usuario()
++void Usuario(NombreUsuario,Contraseña)
+}
+class entity.Venta #green{
+-NumerodeVenta:int
+-Pagar:float
+-Cambio:float
++float getPagar()
++float setPagar()
++float getCambio()
++float setCambio()
++void Venta()
++void Venta(NumerodeVenta,Pagar,Cambio)
+
+}
+class entity.Producto #green{
+-NombreProducto:String
+-Cantidad:int
+-PrecioCompra:float
+-PrecioVenta:float
+-Descripcion:String
++String getNombreProductos()
++String setNombreProductos()
++String getCantidad()
++String setCantidad()
++String getPrecioCompra()
++String setPrecioCompra()
++String getPrecioVenta()
++String setPrecioVenta()
++String getDescripcion()
++String setDescripcion()
++void Producto()
++void Producto(NombreProducto,Cantidad,PrecioCompra,PrecioVenta,Descripcion)
+
+}
+
+interface model.IUsuarioModel #red {
++void BuscarUsuario()
++void ConsultarUsuario()
++void EliminarUsuario()
++void ActaulizarUsuario()
+
+}
+interface model.IVentaModel #red{
++void EliminarProducto()
++void CancelarVenta()
++void MuestraProducto()
++void RealizarVenta()
+}
+interface model.IConsultarVentaModel #red{
++void BuscarVenta()
++void ConsultarVenta()
++void EliminarVenta()
++void ActaulizarVenta()
+}
+interface model.IProductoModel #red{
++void consultarProducto()
++void eliminarProducto()
++void actualizarProducto()
++void CambiarDatos()
++void buscaProducto()
+}
+
+class model.UsuarioModelImpl #purple{
++void BuscarUsuario()
++void ConsultarUsuario()
++void EliminarUsuario()
++void ActaulizarUsuario()
+}
+class model.VentaModelImpl #purple{
++void EliminarProducto()
++void CancelarVenta()
++void MuestraProducto()
++void RealizarVenta()
+}
+
+class model.ConsultarVentaModel #purple{
++void BuscarVenta()
++void ConsultarVenta()
++void EliminarVenta()
++void ActaulizarVenta()
+}
+
+class model.ProductoModelImpl #purple{
++void consultarProducto()
++void eliminarProducto()
++void actualizarProducto()
++void CambiarDatos()
++void buscaProducto()
+}
+class controlador.usuarioControlador #pink{
++UsuarioController
++VentaController
++ProductoController
+}
+
+class vista.Panel.Venta {
++SeleccioanrProducto()
++CuentaPorCobrar()
++recibido()
++cambio()
++CalcelarCompra()
++RealizarCompra()
++EliminarProducto()
++JtableVentas()
+}
+
+class vista.Panel.InicioDeSesion {
++Contraseña[JPasswordField]()
++Usuario[JtextField]
+
+}
+
+class vista.Panel.Producto {
++NombreProducto()
++Cantidad()
++PrecioCompra()
++PrecioVenta()
++Descripcion()
+}
+
+class vista.Panel.ConsultarVenta {
++buscar()
++actaulizar()
++eliminar()
+}
+class vista.Panel.Administrador {
++Inicio()
++Venta()
++Producto()
++Usuarios()
++Salir()
+}
+class vista.Panel.AgregarUsuario{
++Guardar()
++Limpiar()
++Salir()
++TxtNombreUsuario()
++TxtContraseña()
+}
+class vista.Panel.ConsultarUsuario{
++Actualizar()
++Eliminar()
++Salir()
++TxtBuscaUsuario()
++JtableUsuarios()
+}
+class vista.Panel.ConsultarProducto{
++Actualizar()
++Eliminar()
++Salir()
++TxtBuscaProducto()
++JtableProducto()
+}
+
+class vista.Panel.SeleccionarProducto{
++AgregarProducto()
++Salir()
++SpinnerCantidadProducto()
++TxtBuscaProductos()
++JtableProductos()
+}
+
+@enduml
