@@ -1,0 +1,16 @@
+@startuml
+Actor Usuario
+Usuario-->Administrar_contenido:Ingresar datos
+Activate Administrar_contenido
+Administrar_contenido ->Administrar_contenido:Id_usuario
+Administrar_contenido ->Administrar_contenido:Usuario
+Administrar_contenido ->Administrar_contenido:Contrasena
+Administrar_contenido ->Administrar_contenido:Correo
+Administrar_contenido ->Administrar_contenido:Seleccionar checkbox
+database Base_de_datos
+Administrar_contenido ->Base_de_datos:Validar informacion
+Activate Base_de_datos
+deactivate Administrar_contenido 
+Base_de_datos-->Usuario:Usuario modificado
+deactivate Base_de_datos
+@enduml

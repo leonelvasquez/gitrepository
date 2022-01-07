@@ -1,0 +1,18 @@
+@startuml
+Actor Usuario
+Usuario-> Administrador_de_datos: Genera usuario
+Activate Administrador_de_datos
+
+Administrador_de_datos->Administrador_de_datos:Nombre de usuario
+
+
+
+
+Administrador_de_datos->Administrador_de_datos:Contraseña
+Administrador_de_datos->Administrador_de_datos:Confirmacion de contraseña
+Administrador_de_datos->Administrador_de_datos:Limpiar
+
+
+Activate Base_de_datos
+Base_de_datos-->Administrador_Usuario:Datos correctos
+@enduml

@@ -1,0 +1,112 @@
+@startuml
+    [*] --> Login
+   
+    Login --> Usuario : Ingresar
+    Usuario -> contraseña : Ingresar
+    contraseña-->DatosCorrectos
+    contraseña-->DatosIncorrectos
+    DatosCorrectos-->ventanaPrincipal
+    DatosIncorrectos-->Login:volver a ingresar datos
+    ventanaPrincipal --> [*]
+
+
+    [*] --> VentanaPrincipal
+   
+    VentanaPrincipal--> Inicio : ir a
+    Inicio-->CerrarSesion
+    VentanaPrincipal-->Ventas: ir a
+    Ventas-->RealizaVenta
+    Ventas-->ConsultaVenta
+    VentanaPrincipal-->Producto: ir a
+    Producto-->AltaProducto
+    Producto-->ConsultaProducto
+    VentanaPrincipal-->Usuario: ir a
+    Usuario-->AltaUsuario
+    Usuario-->ConsultaUsuario
+  
+    CerrarSesion-->[*]
+    RealizaVenta --> [*]
+    ConsultaVenta --> [*]
+    Producto --> [*]
+    Usuario --> [*]
+    
+    
+     [*] --> SeleccionarProducto
+   
+    SeleccionarProducto--> MostrarProductos: ir a
+    MostrarProductos-->CobrarCuenta
+    CobrarCuenta-->RealizaVenta
+    CobrarCuenta-->CancelarVenta
+    RealizaVenta-->Salir
+    CancelarVenta-->Salir
+    Salir--> [*]
+    
+    [*] --> BuscarProducto
+   
+    BuscarProducto--> MostrarProducto: ir a
+    MostrarProducto-->AgregarProducto
+    MostrarProducto-->Salir
+    Salir--> [*]
+    
+    
+    [*] --> BuscarVenta
+   
+    BuscarVenta--> MostrarVenta: ir a
+    MostrarVenta-->Actualizar
+    MostrarVenta-->eliminar
+    MostrarVenta-->Salir
+    Salir--> [*] 
+    
+    
+    
+    
+    
+     [*] --> BuscarProducto
+   
+   BuscarProducto--> MostrarProducto: ir a
+   MostrarProducto-->Actualizar
+   MostrarProducto-->eliminar
+   MostrarProducto-->Salir
+    Salir--> [*]
+    
+   [*] --> AltaProducto
+   
+   AltaProducto--> DatosProducto: ir a
+   DatosProducto-->Guardar
+   DatosProducto-->Salir
+   Salir--> [*]
+  
+   [*] --> ActualizarProducto
+   
+   ActualizarProducto--> DatosProducto: ir a
+   DatosProducto-->Actualizar
+   DatosProducto-->Salir
+   Salir--> [*]
+  
+  
+  
+    [*] --> BuscarUsuario
+   
+   BuscarUsuario--> MostrarUsuario: ir a
+   MostrarUsuario-->ActualizarUsuario
+   MostrarUsuario-->eliminarUsuario
+   MostrarUsuario-->Salir
+   Salir--> [*] 
+    
+    
+   [*] --> AltaUsuario
+   
+   AltaUsuario--> DatosUsuario: ir a
+   DatosUsuario-->Guardar
+   DatosUsuario-->Salir
+   Salir--> [*] 
+    
+    
+    
+    
+    
+
+
+
+@enduml
+

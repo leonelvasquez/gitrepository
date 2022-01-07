@@ -1,0 +1,43 @@
+@startuml
+@startuml
+object Usuario #green{
+-NombreUsuario
+-Contraseña
+}
+ 
+
+object Vendedoruno #green{
+-NombreUsuario
+-Contraseña
+-Contraseña
+-Rol
+}
+Usuario --|>  Vendedoruno
+Usuario --|>   Administrador
+
+object Administrador #green{
+-NombreUsuario
+-Contraseña
+-Rol
+}
+object Venta #green{
+-NumerodeVenta:int
+-Pagar:float
+-Cambio:float
+
+
+}
+object Producto #green{
+-NombreProducto
+-Cantidad
+-PrecioCompra
+-PrecioVenta
+-Descripcion
+}
+
+
+
+Venta --|>   Producto
+@enduml
+@enduml
+

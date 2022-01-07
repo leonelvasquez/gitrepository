@@ -1,0 +1,13 @@
+@startuml
+Actor Usuario
+Usuario-> Administrador_de_datos: Ingresar datos 
+Activate Administrador_de_datos
+Administrador_de_datos->Administrador_de_datos:Seleccionar producto
+Administrador_de_datos->Administrador_de_datos:Ingresar total
+Administrador_de_datos->Administrador_de_datos:Registra cantidad recibida
+Administrador_de_datos->Administrador_de_datos:Salir
+Administrador_de_datos->Administrador_de_datos:Cancelar
+Administrador_de_datos-> Base_de_datos:Validar datos 
+Activate Base_de_datos
+Base_de_datos-->Administrador_Usuario:Datos correctos
+@enduml
