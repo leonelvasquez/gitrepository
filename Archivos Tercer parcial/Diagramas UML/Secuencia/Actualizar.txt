@@ -1,0 +1,16 @@
+@startuml
+Actor Usuario
+Usuario-> Administrador_de_datos: Genera alta de producto
+Activate Administrador_de_datos
+
+Administrador_de_datos->Administrador_de_datos:Actualizar
+
+
+
+
+Administrador_de_datos->Administrador_de_datos:Cerrar
+
+
+Activate Base_de_datos
+Base_de_datos-->Administrador_Usuario:Datos correctos
+@enduml
