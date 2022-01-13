@@ -1,0 +1,44 @@
+CREATE TABLE Producto
+(
+  IDPRODUCTO INT NOT NULL,
+  Nombre varchar(20) NOT NULL,
+  Preciocompra real ,
+  Precioventa real,
+  Descripcion varchar(20),
+  Cantidad INT NOT NULL,
+  PRIMARY KEY (IDPRODUCTO)
+);
+
+CREATE TABLE Empleado
+(
+  Nombre varchar(20),
+  Telefono INT NOT NULL,
+  Domicilio varchar(20),
+  Correo varchar(20),
+  IdVendedor INT NOT NULL,
+  Cargo varchar(20),
+  PRIMARY KEY (IdVendedor)
+);
+
+CREATE TABLE Venta
+(
+  IdVenta INT NOT NULL,
+  NombreProducto varchar(20),
+  IDPRODUCTO INT NOT NULL,
+  Precio real,
+  Fecha_venta date,
+  IdVendedor INT NOT NULL,
+  PRIMARY KEY (IdVenta),
+  FOREIGN KEY (IdVendedor) REFERENCES Empleado(IdVendedor),
+  UNIQUE (IDPRODUCTO)
+);
+
+CREATE TABLE Contiene
+(
+  Cantidad INT NOT NULL,
+  IdVenta INT NOT NULL,
+  IDPRODUCTO INT NOT NULL,
+  PRIMARY KEY (IdVenta, IDPRODUCTO),
+  FOREIGN KEY (IdVenta) REFERENCES Venta(IdVenta),
+  FOREIGN KEY (IDPRODUCTO) REFERENCES Producto(IDPRODUCTO)
+);
